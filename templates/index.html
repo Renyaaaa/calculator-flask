@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+    <meta charset="UTF-8">
+    <meta name="viemport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<body>
+    <h1>Easy Calculator</h1>
+    <form action="/" method="post">
+        <input type="number" name="num1" required>
+        <select name="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="nember" name="num2" required>
+        <button type="submit">Result</button>
+    </form>
+    {% if result is not none %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>   
